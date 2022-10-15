@@ -1,5 +1,6 @@
 package com.portal.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,80 +13,137 @@ import org.springframework.lang.Nullable;
 @Entity
 @Table(name = "Doctor")
 public class Doctor {
-	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long dId;
-	private String doctorName;
+	@GeneratedValue
+	private int d_id;
+	@Column(name="d_name")
+	private String d_name;
+	@Column(name="gender")
 	private String gender;
-	private String qualification;
-	private String mobile;
-	private String applicationStatus; //Bydefault null 1.Approved 2.Rejected
-	private String email;  //used to login
-	@Nullable
-	private String password; //assigned by admin after job approval
-	public long getdId() {
-		return dId;
+	@Column(name="username")
+	private String username;
+	@Column(name="password")
+	private String password;
+	@Column(name="contact_no")
+	private String contact_no;
+	@Column(name="Address")
+	private String address;
+	@Column(name="Specialization")
+	private String specialization;
+	@Column(name="Experiance")
+	private String experiance;
+	@Column(name="Accept")
+	private  String accept;
+	@Column(name="Salary")
+    private String salary;
+	
+	public Doctor() {
+		
 	}
-	public void setdId(long dId) {
-		this.dId = dId;
+
+	public Doctor(int d_id, String d_name, String gender, String username, String password, String contact_no,
+			String address, String specialization, String experiance, String accept, String salary) {
+		super();
+		this.d_id = d_id;
+		this.d_name = d_name;
+		this.gender = gender;
+		this.username = username;
+		this.password = password;
+		this.contact_no = contact_no;
+		this.address = address;
+		this.specialization = specialization;
+		this.experiance = experiance;
+		this.accept = accept;
+		this.salary = salary;
 	}
-	public String getDoctorName() {
-		return doctorName;
+
+	public int getD_id() {
+		return d_id;
 	}
-	public void setDoctorName(String doctorName) {
-		this.doctorName = doctorName;
+
+	public void setD_id(int d_id) {
+		this.d_id = d_id;
 	}
+
+	public String getD_name() {
+		return d_name;
+	}
+
+	public void setD_name(String d_name) {
+		this.d_name = d_name;
+	}
+
 	public String getGender() {
 		return gender;
 	}
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getQualification() {
-		return qualification;
+
+	public String getUsername() {
+		return username;
 	}
-	public void setQualification(String qualification) {
-		this.qualification = qualification;
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getMobile() {
-		return mobile;
-	}
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Doctor(long dId, String doctorName, String gender, String qualification, String mobile, String email,
-			String password) {
-		super();
-		this.dId = dId;
-		this.doctorName = doctorName;
-		this.gender = gender;
-		this.qualification = qualification;
-		this.mobile = mobile;
-		this.email = email;
-		this.password = password;
+
+	public String getContact_no() {
+		return contact_no;
 	}
-	public Doctor() {
-		super();
+
+	public void setContact_no(String contact_no) {
+		this.contact_no = contact_no;
 	}
-	@Override
-	public String toString() {
-		return "DoctorSignup [dId=" + dId + ", doctorName=" + doctorName + ", gender=" + gender + ", qualification="
-				+ qualification + ", mobile=" + mobile + ", email=" + email + ", password=" + password + "]";
+
+	public String getAddress() {
+		return address;
 	}
-	
-	
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getSpecialization() {
+		return specialization;
+	}
+
+	public void setSpecialization(String specialization) {
+		this.specialization = specialization;
+	}
+
+	public String getExperiance() {
+		return experiance;
+	}
+
+	public void setExperiance(String experiance) {
+		this.experiance = experiance;
+	}
+
+	public String getAccept() {
+		return accept;
+	}
+
+	public void setAccept(String accept) {
+		this.accept = accept;
+	}
+
+	public String getSalary() {
+		return salary;
+	}
+
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
+
 
 }

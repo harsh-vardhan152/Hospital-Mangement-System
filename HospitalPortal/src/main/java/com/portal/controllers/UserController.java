@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.portal.services.UserServices;
+import com.portal.services.PatientSignUpService;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 	
 	@Autowired
-	UserServices service;
+	PatientSignUpService service;
 
 }

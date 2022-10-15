@@ -1,9 +1,11 @@
 package com.portal.repositories;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import org.springframework.data.repository.CrudRepository;
+import com.portal.entities.Appointment;
 
-import com.portal.entities.PatientAppointments;
 
-public interface AppointmentRepository extends CrudRepository<PatientAppointments, Long> {
+@Repository
+public interface AppointmentRepository extends JpaRepository<Appointment,Integer> {
 
 }
