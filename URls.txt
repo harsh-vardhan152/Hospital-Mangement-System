@@ -34,3 +34,119 @@ Response:
 
 ------------------------------------------------------------------
 
+3)http://localhost:8181/api/v1/doctors (post)
+Request Body:
+{
+     "d_name": "Hemsri",
+    "gender": "Female",
+    "username": "Hemsri",
+    "password": "hemsri",
+    "contact_no": "1234567890",
+    "address": "Chennai",
+    "specialization": "MBBS",
+    "experiance": "3"
+   
+   
+}
+
+Response Body:
+{
+    "d_id": 3,
+    "d_name": "Hemsri",
+    "gender": "Female",
+    "username": "Hemsri",
+    "password": "hemsri",
+    "contact_no": "1234567890",
+    "address": "Chennai",
+    "specialization": "MBBS",
+    "experiance": "3",
+    "accept": null,
+    "salary": null
+}
+
+--------------------------------------------------------
+
+4)http://localhost:8181/api/v1/doctors/3  (get)
+Response Body:
+{
+    "d_id": 3,
+    "d_name": "Hemsri",
+    "gender": "Female",
+    "username": "Hemsri",
+    "password": "hemsri",
+    "contact_no": "1234567890",
+    "address": "Chennai",
+    "specialization": "MBBS",
+    "experiance": "3",
+    "accept": null,
+    "salary": null
+}
+
+
+5)http://localhost:8181/api/v1/doctors/1 (put)
+Request Body:
+{
+     "d_name": "Kani",
+    "gender": "Female",
+    "username": "Kani",
+    "password": "Kani1",
+    "contact_no": "0987654321",
+    "address": "Kerala",
+    "specialization": "BDS",
+    "experiance": "4"
+  
+}
+
+Response Body:
+{
+     "d_name": "Kani",
+    "gender": "Female",
+    "username": "Kani",
+    "password": "Kani1",
+    "contact_no": "0987654321",
+    "address": "Kerala",
+    "specialization": "BDS",
+    "experiance": "4"
+  
+}
+-------------------------------------------------------
+
+6)http://localhost:8181/api/v1/doctors  (get)
+Response Body:
+[
+    {
+        "d_id": 2,
+        "d_name": "Hemsri",
+        "gender": "Female",
+        "username": "Hemsri",
+        "password": "hemsri",
+        "contact_no": "1234567890",
+        "address": "Chennai",
+        "specialization": "MBBS",
+        "experiance": "3",
+        "accept": null,
+        "salary": null
+    },
+    {
+        "d_id": 3,
+        "d_name": "Kamal",
+        "gender": "Male",
+        "username": "Kamal",
+        "password": "Kamal",
+        "contact_no": "103456789",
+        "address": "Chennai",
+        "specialization": "MBBS",
+        "experiance": "3",
+        "accept": null,
+        "salary": null
+    }
+]
+
+
+http://localhost:8181/api/v1/doctors/3  (delete)
+Response Body:
+{
+    "deleted": true
+}
+
+
