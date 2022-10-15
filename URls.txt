@@ -1,0 +1,36 @@
+URL Mapping ---> ADMIN
+
+1) http://localhost:8181/registerAdmin (post)
+Request Body:
+{
+    "emailId":"admin@abc.com",
+    "userName": "admin",
+    "password":"abc@123"
+}
+Response:
+{
+    "id": 1,
+    "emailId": "admin@abc.com",
+    "userName": "admin",
+    "password": "abc@123"
+}
+
+------------------------------------------------------------------
+
+2) http://localhost:8181/adminlogin (post)
+Request Body:
+{
+    "emailId":"admin@abc.com",
+    "userName": "admin",
+    "password":"abc@123"
+}
+Response:
+{
+    "id": 1,
+    "emailId": "admin@abc.com",
+    "userName": "admin",
+    "password": "abc@123"
+}
+
+------------------------------------------------------------------
+

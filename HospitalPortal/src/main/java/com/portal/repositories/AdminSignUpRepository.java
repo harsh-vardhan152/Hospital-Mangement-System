@@ -7,5 +7,9 @@ import com.portal.entities.AdminSignUp;
 
 public interface AdminSignUpRepository extends JpaRepository<AdminSignUp, Integer> {
 	
+        AdminSignUp findByEmailId(String email);
+
+		AdminSignUp findByEmailIdAndPassword(String email, String password);
+	
 
 }
