@@ -141,12 +141,32 @@ Response Body:
         "salary": null
     }
 ]
+-------------------------------------------------
 
-
-http://localhost:8181/api/v1/doctors/3  (delete)
+7) http://localhost:8181/api/v1/doctors/3  (delete)
 Response Body:
 {
     "deleted": true
 }
 
+-------------------------------------------------
+
+8) http://localhost:8181/api/v1/doctorlogin (POST)
+
+RequestBody:
+
+{
+    "username": "Kanimozhi",
+    "password": "Kanimozhi123"
+   
+}
+
+Response Body:
+
+{
+    "username": "Kanimozhi",
+    "password": "Kanimozhi123",
+    "authenticated": true
+}
+-----------------------------------------------------------
 
