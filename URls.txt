@@ -170,3 +170,86 @@ Response Body:
 }
 -----------------------------------------------------------
 
+9) http://localhost:8181/api/v1/patients (POST)
+
+RequestBody:
+
+{
+    "p_name":"krishna",
+    "username":"ctron",
+    "password":"root",
+    "p_gender":"Male",
+    "p_contact_no":"1234567890"
+
+}
+Response Body:
+
+{
+    "p_id": 1,
+    "p_name": "krishna",
+    "username": "ctron",
+    "password": "root",
+    "p_gender": "Male",
+    "p_contact_no": "1234567890"
+}
+
+10)http://localhost:8181/api/v1/patients (GET)
+
+RequestBody:
+
+{
+    "p_name":"GK",
+    "username":"abc",
+    "password":"toor",
+    "p_gender":"Female",
+    "p_contact_no":"1234562890"
+
+}
+
+Response Body:
+
+[
+    {
+        "p_id": 1,
+        "p_name": "krishna",
+        "username": "ctron",
+        "password": "root",
+        "p_gender": "Male",
+        "p_contact_no": "1234567890"
+    },
+    {
+        "p_id": 2,
+        "p_name": "GK",
+        "username": "abc",
+        "password": "toor",
+        "p_gender": "Female",
+        "p_contact_no": "1234562890"
+    }
+]
+
+11)http://localhost:8181/api/v1/patients/2 (GET)
+
+RequestParam:p_id
+
+ResponseBody:
+
+{
+        "p_id": 2,
+        "p_name": "GK",
+        "username": "abc",
+        "password": "toor",
+        "p_gender": "Female",
+        "p_contact_no": "1234562890"
+}
+
+12)UPDATE Pending
+
+13)http://localhost:8181/api/v1/patients/2
+
+Pathvariable :p_id
+
+Response Body:
+{
+    "deleted": true
+}
+
