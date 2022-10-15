@@ -253,3 +253,22 @@ Response Body:
     "deleted": true
 }
 
+------------------------------------------------------------------------
+14)http://localhost:8181/api/v1/patientlogin (post)
+
+RequestParam:
+{
+    "username":"kamal",
+    "password":"kamal"
+}
+
+Response Body:
+{
+    "username": "kamal",
+ 
+     "password": "root",
+
+    "authenticated": true
+
+}
+--------------------------------------------------------------------------
