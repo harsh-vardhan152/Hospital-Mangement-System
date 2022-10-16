@@ -396,5 +396,72 @@ Respone Body:
 {
 "deleted":true
 }
+----------------------------------------------------------------
+20)http://localhost:8181/api/v1/dischargedpatients (post)
+Request Body:
+{
+	"d_id":"1234",
 
+	"p_name":"kamal",
 
+	"d_name":"vijay",
+
+	"d_time":"12:00",
+
+	"d_date":"12/10/2022",
+
+	"disease":"Malaria",
+
+	"confirm":"yes"
+
+}
+Response Body:
+{
+	
+	"p_name":"kamal",
+
+	"d_name":"vijay",
+
+	"d_time":"12:00",
+
+	"d_date":"12/10/2022",
+
+	"disease":"Malaria",
+
+	"confirm":"yes"
+
+}
+-----------------------------------------------------------------
+21)http://localhost:8181/api/v1/dischargedpatients (get)
+Response Body:
+[
+    
+{
+        "p_name": "kamal",
+
+        "d_name": "vijay",
+
+        "d_time": "12:00",
+
+        "d_date": "12/10/2022",
+
+        "disease": "Malaria",
+
+        "confirm": "yes"
+    
+},
+
+    {
+   "p_name": "kannan",
+
+        "d_name": "vijay",
+
+        "d_time": "11:00",
+
+        "d_date": "13/10/2022",
+
+        "disease": "Malaria",
+
+        "confirm": "yes"
+    }
+]
