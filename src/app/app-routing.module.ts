@@ -8,13 +8,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 import { PatientRegisterComponent } from './component/pages/patient/patient-register/patient-register.component';
 import { TestimonialsComponent } from './component/pages/testimonials/testimonials.component';
+import { DoctorLoginComponent } from './component/pages/doctor/doctor-login/doctor-login.component';
 
 const routes: Routes = [
 {path:"doctor/registration",component:DotorRegistrationComponent},
 {path:"patient/registration", component:PatientRegisterComponent},
 {path:"admin/registration" , component:AdminRegisterComponent},
 {path:"header", component: HeaderComponent},
-{path:"testimonials" , component: TestimonialsComponent}
+{path:"testimonials" , component: TestimonialsComponent},
+{path:"doctor/login", component: DoctorLoginComponent}
  
 
 ];
