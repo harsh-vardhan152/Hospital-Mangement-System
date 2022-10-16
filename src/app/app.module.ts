@@ -11,6 +11,8 @@ import { AdminRegisterComponent } from './component/pages/admin/admin-register/a
 import { DotorRegistrationComponent } from './component/pages/doctor/dotor-registration/dotor-registration.component';
 import { DoctorLoginComponent } from './component/pages/doctor/doctor-login/doctor-login.component';
 import { HeaderComponent } from './component/pages/header/header/header.component';
+import { TestimonialsComponent } from './component/pages/testimonials/testimonials.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,16 @@ import { HeaderComponent } from './component/pages/header/header/header.componen
     
     DotorRegistrationComponent,
          DoctorLoginComponent,
-         HeaderComponent
+         HeaderComponent,
+         TestimonialsComponent,
+        
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
     
   ],
   providers: [],
