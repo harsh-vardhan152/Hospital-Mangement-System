@@ -4,7 +4,6 @@ import org.springframework.stereotype.Repository;
 
 import com.portal.entities.Appointment;
 
-
 @Repository
 public interface AppointmentRepository extends JpaRepository<Appointment,Integer> {
 

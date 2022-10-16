@@ -294,3 +294,107 @@ Response Body:
 ####VERIFIED
 
 --------------------------------------------------------------------------
+
+15)http://localhost:8181/api/v1/appointments/4  (get)
+Response body:
+{
+    "ap_id": 4,
+    "p_name": "Kani",
+    "d_name": "Anu",
+    "address": "Chennai",
+    "gender": "Female",
+    "ap_date": "16/10/2022",
+    "ap_time": "10:00 AM",
+    "disease": "Fever"
+}
+
+--------------------------------------------------------------
+16)http://localhost:8181/api/v1/appointments  (post)
+
+Request param:
+{
+    "p_name":"Yazhini",
+    "d_name":"Hemsri",
+    "address":"Madurai",
+    "gender":"Female",
+    "ap_date":"17/10/2022",
+    "ap_time":"11:00 AM",
+    "disease":"Cold"
+
+}
+
+Response Body:
+{
+    "ap_id":"5",
+    "p_name":"Yazhini",
+    "d_name":"Hemsri",
+    "address":"Madurai",
+    "gender":"Female",
+    "ap_date":"17/10/2022",
+    "ap_time":"11:00 AM",
+    "disease":"Cold"
+
+}
+------------------------------------------------------------
+17)http://localhost:8181/api/v1/appointments  (get)
+Response Body:
+
+[
+    {
+        "ap_id": 4,
+        "p_name": "Kani",
+        "d_name": "Anu",
+        "address": "Chennai",
+        "gender": "Female",
+        "ap_date": "16/10/2022",
+        "ap_time": "10:00 AM",
+        "disease": "Fever"
+    },
+    {
+        "ap_id": 5,
+        "p_name": "Yazhini",
+        "d_name": "Hemsri",
+        "address": "Madurai",
+        "gender": "Female",
+        "ap_date": "17/10/2022",
+        "ap_time": "11:00 AM",
+        "disease": "Cold"
+    }
+]
+-------------------------------------------------------------
+18) http://localhost:8181/api/v1/appointments/5 (put)
+
+Request param:
+
+ {
+        
+        "p_name": "Kamal",
+        "d_name": "Hemsri",
+        "address": "Madurai",
+        "gender": "Male",
+        "ap_date": "17/10/2022",
+        "ap_time": "4:00 PM",
+        "disease": "Cold"
+    }
+
+Respone Body:
+{
+    "ap_id": 5,
+    "p_name": "Kamal",
+    "d_name": "Hemsri",
+    "address": "Madurai",
+    "gender": "Male",
+    "ap_date": "17/10/2022",
+    "ap_time": "4:00 PM",
+    "disease": "Cold"
+}
+
+------------------------------------------------------------
+19) http://localhost:8181/api/v1/appointments/4  (delete)
+
+Respone Body:
+{
+"deleted":true
+}
+
+
