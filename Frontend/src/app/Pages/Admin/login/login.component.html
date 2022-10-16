@@ -1,0 +1,33 @@
+<h2 align="center">Login Form For Admin</h2>
+
+<form method="post" #loginform="ngForm" (ngSubmit)="loginAdmin(loginform)">
+    <div class="imgcontainer">
+        <img src="../../../../assets/12_(50).jpg" alt="Avatar" class="avatar" />
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required  [(ngModel)]="admin.emailId" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        #email="ngModel" 
+        [class.is-invalid]="email.invalid && email.touched"/>
+        <small class="text-danger"[class.d-none]="email.valid || email.untouched">Email Id is required field</small>
+    </div>
+
+        <label for="pwd"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="admin.password" required #password="ngModel"
+        [class.is-invalid]="password.invalid && password.touched" required />
+        <small class="text-danger"[class.d-none]="password.valid || password.untouched">password is required field</small>
+
+        <button type="submit">Login</button>
+        <label>
+      <input type="checkbox" checked="checked" name="remember" /> Remember me
+    </label>
+    </div>
+
+    <div class="container" style="background-color: #f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+</form>
+<router-outlet></router-outlet>
