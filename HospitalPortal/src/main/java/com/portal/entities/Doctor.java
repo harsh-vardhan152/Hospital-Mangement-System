@@ -11,7 +11,7 @@ import org.springframework.lang.Nullable;
 
 
 @Entity
-@Table(name = "Doctor")
+@Table(name = "doctor")
 public class Doctor {
 	@Id
 	@GeneratedValue

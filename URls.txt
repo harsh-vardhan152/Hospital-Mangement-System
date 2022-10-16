@@ -15,6 +15,7 @@ Response:
     "password": "abc@123"
 }
 
+####VERIFIED
 ------------------------------------------------------------------
 
 2) http://localhost:8181/adminlogin (post)
@@ -32,6 +33,7 @@ Response:
     "password": "abc@123"
 }
 
+####VERIFIED
 ------------------------------------------------------------------
 
 3)http://localhost:8181/api/v1/doctors (post)
@@ -44,9 +46,7 @@ Request Body:
     "contact_no": "1234567890",
     "address": "Chennai",
     "specialization": "MBBS",
-    "experiance": "3"
-   
-   
+    "experiance": "3" 
 }
 
 Response Body:
@@ -64,6 +64,7 @@ Response Body:
     "salary": null
 }
 
+####VERIFIED
 --------------------------------------------------------
 
 4)http://localhost:8181/api/v1/doctors/3  (get)
@@ -82,6 +83,9 @@ Response Body:
     "salary": null
 }
 
+####VERIFIED
+
+---------------------------------------------------------
 
 5)http://localhost:8181/api/v1/doctors/1 (put)
 Request Body:
@@ -94,7 +98,6 @@ Request Body:
     "address": "Kerala",
     "specialization": "BDS",
     "experiance": "4"
-  
 }
 
 Response Body:
@@ -107,8 +110,10 @@ Response Body:
     "address": "Kerala",
     "specialization": "BDS",
     "experiance": "4"
-  
 }
+
+####VERIFIED
+
 -------------------------------------------------------
 
 6)http://localhost:8181/api/v1/doctors  (get)
@@ -141,6 +146,9 @@ Response Body:
         "salary": null
     }
 ]
+
+####VERIFIED
+
 -------------------------------------------------
 
 7) http://localhost:8181/api/v1/doctors/3  (delete)
@@ -149,16 +157,16 @@ Response Body:
     "deleted": true
 }
 
+####VERIFIED
+
 -------------------------------------------------
 
 8) http://localhost:8181/api/v1/doctorlogin (POST)
 
 RequestBody:
-
 {
     "username": "Kanimozhi",
     "password": "Kanimozhi123"
-   
 }
 
 Response Body:
@@ -168,6 +176,9 @@ Response Body:
     "password": "Kanimozhi123",
     "authenticated": true
 }
+
+####VERIFIED
+
 -----------------------------------------------------------
 
 9) http://localhost:8181/api/v1/patients (POST)
@@ -193,6 +204,10 @@ Response Body:
     "p_contact_no": "1234567890"
 }
 
+####VERIFIED
+
+--------------------------------------------------------------
+
 10)http://localhost:8181/api/v1/patients (GET)
 
 RequestBody:
@@ -203,11 +218,9 @@ RequestBody:
     "password":"toor",
     "p_gender":"Female",
     "p_contact_no":"1234562890"
-
 }
 
 Response Body:
-
 [
     {
         "p_id": 1,
@@ -227,6 +240,10 @@ Response Body:
     }
 ]
 
+####VERIFIED
+
+--------------------------------------------------------------
+
 11)http://localhost:8181/api/v1/patients/2 (GET)
 
 RequestParam:p_id
@@ -242,9 +259,12 @@ ResponseBody:
         "p_contact_no": "1234562890"
 }
 
+-----------------------------------------------------------------
+
 12)UPDATE Pending
 
-13)http://localhost:8181/api/v1/patients/2
+-----------------------------------------------------------------
+13)http://localhost:8181/api/v1/patients/2 (delete)
 
 Pathvariable :p_id
 
@@ -252,6 +272,8 @@ Response Body:
 {
     "deleted": true
 }
+
+####VERIFIED
 
 ------------------------------------------------------------------------
 14)http://localhost:8181/api/v1/patientlogin (post)
@@ -265,10 +287,10 @@ RequestParam:
 Response Body:
 {
     "username": "kamal",
- 
-     "password": "root",
-
+    "password": "root",
     "authenticated": true
-
 }
+
+####VERIFIED
+
 --------------------------------------------------------------------------
