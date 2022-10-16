@@ -307,7 +307,7 @@ Response body:
     "ap_time": "10:00 AM",
     "disease": "Fever"
 }
-
+####VERIFIED
 --------------------------------------------------------------
 16)http://localhost:8181/api/v1/appointments  (post)
 
@@ -335,6 +335,7 @@ Response Body:
     "disease":"Cold"
 
 }
+####VERIFIED
 ------------------------------------------------------------
 17)http://localhost:8181/api/v1/appointments  (get)
 Response Body:
@@ -361,6 +362,8 @@ Response Body:
         "disease": "Cold"
     }
 ]
+
+####VERIFIED
 -------------------------------------------------------------
 18) http://localhost:8181/api/v1/appointments/5 (put)
 
@@ -388,7 +391,7 @@ Respone Body:
     "ap_time": "4:00 PM",
     "disease": "Cold"
 }
-
+####VERIFIED
 ------------------------------------------------------------
 19) http://localhost:8181/api/v1/appointments/4  (delete)
 
@@ -431,6 +434,8 @@ Response Body:
 	"confirm":"yes"
 
 }
+
+####VERIFIED
 -----------------------------------------------------------------
 21)http://localhost:8181/api/v1/dischargedpatients (get)
 Response Body:
@@ -465,6 +470,8 @@ Response Body:
         "confirm": "yes"
     }
 ]
+
+####VERIFIED
 ---------------------------------------------------
 
 22) http://localhost:8181/api/v1/feedbacks (POST)
@@ -487,7 +494,7 @@ Response Body:
     "p_comments":"Services is Good"
    
 }
-
+####VERIFIED
 ----------------------------------------------------------------------------------
 
 23) http://localhost:8181/api/v1/feedbacks (GET)
@@ -510,4 +517,5 @@ Response Body:
         "p_comments": "Services is Good but need to be improved"
     }
 ]
+####VERIFIED
 ----------------------------------------------------------------------------------------
