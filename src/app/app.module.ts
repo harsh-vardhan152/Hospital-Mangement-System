@@ -10,6 +10,7 @@ import { AdminRegisterComponent } from './component/pages/admin/admin-register/a
 
 import { DotorRegistrationComponent } from './component/pages/doctor/dotor-registration/dotor-registration.component';
 import { DoctorLoginComponent } from './component/pages/doctor/doctor-login/doctor-login.component';
+import { HeaderComponent } from './component/pages/header/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DoctorLoginComponent } from './component/pages/doctor/doctor-login/doct
     AdminRegisterComponent,
     
     DotorRegistrationComponent,
-         DoctorLoginComponent
+         DoctorLoginComponent,
+         HeaderComponent
   ],
   imports: [
     BrowserModule,
