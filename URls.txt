@@ -465,3 +465,49 @@ Response Body:
         "confirm": "yes"
     }
 ]
+---------------------------------------------------
+
+22) http://localhost:8181/api/v1/feedbacks (POST)
+
+Request Param:
+{
+    "p_id":1,
+    "p_name":"Kanimozhi",
+    "d_name":"Hemsri",
+    "p_comments":"Services is Good"
+   
+}
+
+Response Body:
+{
+    "feedback_id":3,
+    "p_id":2,
+    "p_name":"Mahendran",
+    "d_name":"Kamal",
+    "p_comments":"Services is Good but need to be improved"
+   
+}
+
+----------------------------------------------------------------------------------
+
+23) http://localhost:8181/api/v1/feedbacks (GET)
+
+Response Body:
+
+[
+    {
+        "feedback_id": 3,
+        "p_id": 1,
+        "p_name": "Kanimozhi",
+        "d_name": "Hemsri",
+        "p_comments": "Services is Good"
+    },
+    {
+        "feedback_id": 4,
+        "p_id": 2,
+        "p_name": "Mahendran",
+        "d_name": "Kamal",
+        "p_comments": "Services is Good but need to be improved"
+    }
+]
+----------------------------------------------------------------------------------------
