@@ -18,6 +18,9 @@ const routes: Routes = [
     {
       path:'patient',component:PatientComponent
     }
+   {
+      path:'appointment',component:AppointmentComponent
+    }
 ];/*
 const routes:Routes=[{
   path: '', redirectTo: 'dashboard', pathMatch: 'full' },
