@@ -2,6 +2,7 @@ import { PatientlistComponent } from './DoctorDashboard/patientlist/patientlist.
 import { PatientdischargeComponent } from './DoctorDashboard/patientdischarge/patientdischarge.component';
 import { DoctordashboardComponent } from './DoctorDashboard/doctordashboard/doctordashboard.component';
 import { NavigationComponent } from './AdminDashboard/navigation/navigation.component';
+import { AppointmentComponent } from './AdminDashboard/appointment/appointment.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardsComponent } from './AdminDashboard/admin-dashboards/admin-dashboards.component';
