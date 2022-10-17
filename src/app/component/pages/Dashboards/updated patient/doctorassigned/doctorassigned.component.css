@@ -1,0 +1,50 @@
+img{
+    float:right;
+   }
+   
+   p{
+    clear:right;
+   }
+body {
+    font-family: 'lato', sans-serif;
+    background: #eee;
+}
+
+.bottom-border {
+    border-bottom: 1px solid rgb(236, 230, 230);
+}
+
+@media(max-width: 789px) {
+    .fixed-top {
+        position: relative !important;
+        height: auto;
+    }
+}
+
+@media(max-width: 400px) {
+    .fixed-top {
+        position: relative !important;
+        height: auto;
+    }
+}
+
+.sidebar {
+    background-color: rgb(34, 129, 206);
+}
+
+.sidebar .active {
+    background-color: #cf473e;
+    border-radius: 7px;
+    box-shadow: 2px 5px 20px #111;
+    transition: all .3s ease;
+}
+
+.sidebar .active:hover {
+    background-color: #f66436;
+    transform: translateY(-5px);
+}
+
+.sidebar-link:hover {
+    background-color: rgba(83, 60, 60, 0.527);
+    border-radius: 7px;
+}
