@@ -13,6 +13,7 @@ import { DoctorLoginComponent } from './component/pages/doctor/doctor-login/doct
 import { HeaderComponent } from './component/pages/header/header/header.component';
 import { TestimonialsComponent } from './component/pages/testimonials/testimonials.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PortfolioGalleryComponent } from './component/pages/portofolio/portfolio-gallery/portfolio-gallery.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
          DoctorLoginComponent,
          HeaderComponent,
          TestimonialsComponent,
+         PortfolioGalleryComponent,
         
   ],
   imports: [
