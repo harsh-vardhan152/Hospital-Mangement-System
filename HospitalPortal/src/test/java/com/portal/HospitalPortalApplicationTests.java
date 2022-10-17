@@ -9,10 +9,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.portal.entities.DischargedPatient;
 import com.portal.entities.Doctor;
+import com.portal.entities.Feedback;
+import com.portal.repositories.AppointmentRepository;
+import com.portal.repositories.DischargedPatientRepository;
 import com.portal.repositories.DoctorSignUpRepository;
+import com.portal.repositories.FeedbackRepository;
 import com.portal.repositories.PatientSignUpRepository;
 import com.portal.entities.PatientSignUp;
+import com.portal.entities.Appointment;
 
 @SpringBootTest
 class HospitalPortalApplicationTests {
@@ -79,5 +85,80 @@ class HospitalPortalApplicationTests {
 		Doctor doctorsignup = doctorsignupRepository.findById(1).get();
 		assertEquals(1, doctorsignup.getD_id());
 	}
+	
+	
+	
+	@Autowired
+	AppointmentRepository appointmentRepository;
 
+	@Test
+	public void addAppointment() {
+
+		Appointment appointment = new Appointment();
+		appointment.setP_name("Yazhini");
+		appointment.setD_name("Hemsri");
+		appointment.setAddress("Madurai");
+		appointment.setGender("Female");
+		appointment.setAp_date("17/10/2022");
+		appointment.setAp_time("11:00 AM");
+		appointment.setDisease("cold");
+		appointmentRepository.save(appointment);
+		assertNotNull(appointmentRepository.findById(5).get());
+
+	}
+
+	@Test
+	public void AllAppointment() {
+		List<Appointment> list = appointmentRepository.findAll();
+		assertThat(list).size().isGreaterThan(0);
+	}
+
+	@Test
+	public void Appointment() {
+		Appointment appointment = appointmentRepository.findById(5).get();
+		assertEquals(5, appointment.getAp_id());
+	}
+
+	@Autowired
+	DischargedPatientRepository dischargedpatientRepository;
+
+	@Test
+	public void addDischarge() {
+
+		DischargedPatient DischargedPatient = new DischargedPatient();
+		DischargedPatient.setP_name("Manas");
+		DischargedPatient.setD_name("Aman");
+		DischargedPatient.setD_time("9.00 AM");
+		DischargedPatient.setD_date("29/03/2022");
+		DischargedPatient.setConfirm("confirm");
+		dischargedpatientRepository.save(DischargedPatient);
+		assertNotNull(dischargedpatientRepository.findById(8).get());
+	}
+
+	@Test
+	public void AllDischargedPatient() {
+		List<DischargedPatient> list = dischargedpatientRepository.findAll();
+		assertThat(list).size().isGreaterThan(0);
+	}
+	
+	@Autowired
+	FeedbackRepository feedbackRepository;
+	
+	@Test
+	public void saveFeedbacks()
+	{
+		Feedback feedback= new Feedback();
+		feedback.setD_name("Aman");
+		feedback.setP_comments("Services is Good");
+		feedback.setP_id(3);
+		feedback.setP_name("Krishna");
+		feedbackRepository.save(feedback);
+		assertNotNull(feedbackRepository.findById(17).get());
+	}
+
+	@Test
+	public void fetchFeedbacks() {
+		List<Feedback> feedback=feedbackRepository.findAll();
+		assertThat(feedback).size().isGreaterThan(0);
+	}
 }
