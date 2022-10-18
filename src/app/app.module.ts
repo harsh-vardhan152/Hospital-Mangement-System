@@ -14,6 +14,9 @@ import { HeaderComponent } from './component/pages/header/header/header.componen
 import { TestimonialsComponent } from './component/pages/testimonials/testimonials.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PortfolioGalleryComponent } from './component/pages/portofolio/portfolio-gallery/portfolio-gallery.component';
+import { DoctorDashboardComponent } from './component/pages/doctor/doctor-dashboard/doctor-dashboard.component';
+import { FpasswordComponent } from './component/pages/fpassword/fpassword.component';
+import { FeedbackComponent } from './component/pages/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { PortfolioGalleryComponent } from './component/pages/portofolio/portfoli
          HeaderComponent,
          TestimonialsComponent,
          PortfolioGalleryComponent,
+         DoctorDashboardComponent,
+         FpasswordComponent,
+         FeedbackComponent,
         
   ],
   imports: [

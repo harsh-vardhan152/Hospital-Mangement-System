@@ -10,6 +10,9 @@ import { PatientRegisterComponent } from './component/pages/patient/patient-regi
 import { TestimonialsComponent } from './component/pages/testimonials/testimonials.component';
 import { DoctorLoginComponent } from './component/pages/doctor/doctor-login/doctor-login.component';
 import { PortfolioGalleryComponent } from './component/pages/portofolio/portfolio-gallery/portfolio-gallery.component';
+import { DoctorDashboardComponent } from './component/pages/doctor/doctor-dashboard/doctor-dashboard.component';
+import { FeedbackComponent } from './component/pages/feedback/feedback.component';
+import { FpasswordComponent } from './component/pages/fpassword/fpassword.component';
 
 const routes: Routes = [
 {path:"doctor/registration",component:DotorRegistrationComponent},
@@ -18,7 +21,11 @@ const routes: Routes = [
 {path:"header", component: HeaderComponent},
 {path:"testimonials" , component: TestimonialsComponent},
 {path:"doctor/login", component: DoctorLoginComponent},
-{path:"gallery" , component:PortfolioGalleryComponent}
+{path:"gallery" , component:PortfolioGalleryComponent},
+{path:"doctor/dashboard" , component:DoctorDashboardComponent},
+{path:"feedback" , component:FeedbackComponent},
+{path:"password/forgot", component:FpasswordComponent}
+  
  
 
 ];
