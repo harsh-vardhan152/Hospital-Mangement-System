@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<header>
+    <!-- Intro settings -->
+    <style>
+        /* Default height for small devices */
+        
+        #intro-example {
+            height: 400px;
+        }
+        /* Height for devices larger than 992px */
+        
+        @media (min-width: 992px) {
+            #intro-example {
+                height: 434px;
+            }
+        }
+    </style>
+    <div id="intro-example" class="p-5 text-center bg-image" style="
+      background-image: url('https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    ">
+        <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white" style="margin-top: 19px">
+                    <h1 class="mb-3">Welcome To HMS</h1>
+                    <h5 class="mb-4">Your Health Our Duty</h5>
+                    <a class="btn btn-outline-light btn-lg m-2" href="#" role="button" rel="nofollow" target="_blank">Our Services</a
+          >
+          <a
+            class="btn btn-outline-light btn-lg m-2"
+            href=""
+            target="_blank"
+            role="button"
+            >About Us</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section>
+  <div>
+    <app-about-us></app-about-us>
+  </div>
+</section>

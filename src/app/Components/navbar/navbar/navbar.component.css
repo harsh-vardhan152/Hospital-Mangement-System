@@ -1,0 +1,24 @@
+.logo {
+    width: 110px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0;
+    background-color: #3f51b5;
+    overflow: hidden;
+}
+
+li {
+    float: right;
+    margin-right: 20px;
+}
+
+li a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+}

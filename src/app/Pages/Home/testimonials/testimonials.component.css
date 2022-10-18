@@ -1,0 +1,26 @@
+body {
+    background-color: #eee;
+}
+
+.container h1 {
+    text-align: center;
+    padding-top: 10%;
+    margin-bottom: 60px;
+    font-weight: 600;
+    position: relative;
+    margin-left: 100px;
+}
+
+.card {
+    /* border: none; */
+    box-shadow: black !important;
+}
+
+.user-content p {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.ratings i {
+    color: yellow;
+}
