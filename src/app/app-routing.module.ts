@@ -25,6 +25,10 @@ import { DoctorComponent } from './Pages/Admin/doctor/doctor.component';
 import { PatientComponent } from './Pages/Admin/patient/patient.component';
 import { AppointmentComponent } from './Pages/Admin/appointment/appointment.component';
 import { PatientdashboardComponent } from './Pages/Paitent/patientdashboard/patientdashboard.component';
+import {UpdatePage } from './Pages/Admin/update-page/update-page.component';
+import { UpdateAppointmentComponent } from './Pages/Admin/update-appointment/update-appointment/update-appointment.component';
+import { FeedbackComponent } from './Pages/Paitent/patient-Feedback/feedback/feedback.component';
+import { UpdateAppointmentComponentD } from './Pages/Doctor/update-appointment/update-appointment/update-appointment.component';
 
 const routes: Routes = [
   {
@@ -50,7 +54,7 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'asingup',
+    path: 'asignup',
     component: SingupComponent,
   },
   {
@@ -58,7 +62,7 @@ const routes: Routes = [
     component: DoctorLoginComponent,
   },
   {
-    path: 'dsingup',
+    path: 'dsignup',
     component: DoctorSingupComponent,
   },
   {
@@ -66,7 +70,7 @@ const routes: Routes = [
     component: PaitentLoginComponent,
   },
   {
-    path: 'psingup',
+    path: 'psignup',
     component: PaitentSingupComponent,
   },
   {
@@ -102,13 +106,20 @@ const routes: Routes = [
     component: AdmininvoiceComponent,
   },
   { path: 'doctordashboard', component: DoctorDashboardComponent },
+  { path: 'doctordashboard/:d_name', component: DoctorDashboardComponent },
+  {path:'update/:d_id',component:UpdatePage},
+  {path:'update',component:UpdatePage},
+  {path:'update-ap/:ap_id',component:UpdateAppointmentComponent},
+  {path:'update-ap',component:UpdateAppointmentComponent},
   { path: 'patientdischarge', component: DoctorpatientdischargeComponent },
   { path: 'patientlist', component: DoctorpatientlistComponent },
   { path: 'Doctorappointemnt', component: DoctorAppointentComponent },
-
   { path: 'patientdashboard', component: PatientdashboardComponent },
   { path: 'doctorassigned', component: PatientdoctorassignedComponent },
   { path: 'invoice', component: PatientinvoiceComponent },
+  { path: 'feedback', component: FeedbackComponent},
+  {path:'update-apD/:ap_id',component:UpdateAppointmentComponentD},
+  {path:'update-apD',component:UpdateAppointmentComponentD},
 ];
 
 @NgModule({

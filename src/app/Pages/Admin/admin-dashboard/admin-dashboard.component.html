@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 <app-navigation></app-navigation>
 <section>
     <div class="container-fluid">
@@ -12,9 +13,9 @@
                                     <i class="fa fa-user-md text-warning fa-3x iconeimage" aria-hidden="true"></i>
                                 </div>
                                 <div class="text-right text-secondary">
-                                    <h1>3</h1>
+                                    <h1>{{this.dList.length}}</h1>
                                     <h3>Total Doctors</h3>
-                                    <h4>Approve Required 2</h4>
+                                    <h4>Approval required {{this.doctorCount}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -28,9 +29,9 @@
                                     <i class="fa fa-users text-success fa-3x iconeimage" aria-hidden="true"></i>
                                 </div>
                                 <div class="text-right text-secondary">
-                                    <h1>3</h1>
+                                    <h1>{{this.pList.length}}</h1>
                                     <h3>Total Patients</h3>
-                                    <h4>Have to Admit 2</h4>
+                                    <h4>Discharged patients {{this.dpatientCount}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -44,9 +45,9 @@
                                     <i class="fa fa-file-text-o text-primary fa-3x iconeimage" aria-hidden="true"></i>
                                 </div>
                                 <div class="text-right text-secondary">
-                                    <h1>5</h1>
+                                    <h1>{{this.aList.length}}</h1>
                                     <h3>Total Appointments</h3>
-                                    <h4>Approve Appointments 1</h4>
+                                    <h4>Pending appointments {{this.appointmentCount}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -72,26 +73,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>John</td>
-                                <td>AllergistsImmunologists</td>
-                                <td>9672181024</td>
+                            <tr *ngFor="let doctor of dList">
+                                <td>{{doctor.d_name}}</td>
+                                <td>{{doctor.specialization}}</td>
+                                <td>{{doctor.contact_no}}</td>
                                 <td>
                                     <button type="button" class="btn btn-primary btn-sm">
-                    Permanent
-                  </button>
+                                        {{doctor.accept}}
+                                    </button>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>Sachin</td>
-                                <td>Anesthesiologists</td>
-                                <td>9672181024</td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-sm">
-                    On hold
-                  </button>
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -102,34 +93,21 @@
                     <table class="table table-striped table-bordered text-center">
                         <thead class="bg-info">
                             <tr>
-                                <th>Name</th>
+                                <th>Patient Name</th>
                                 <th>Symptoms</th>
-                                <th>Mobile</th>
-                                <th>Address</th>
+                                <th>Doctor Name</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Subham kumar</td>
-                                <td>Bleeding in nose</td>
-                                <td>9572181024</td>
-                                <td>Bihar, India</td>
+                            <tr *ngFor="let patient of dpList">
+                                <td>{{patient.p_name}} </td>
+                                <td>{{patient.disease}}</td>
+                                <td>{{patient.d_name}}</td>
                                 <td>
                                     <button type="button" class="btn btn-primary btn-sm">
-                    Admitted
-                  </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ram Kumar</td>
-                                <td>Pain</td>
-                                <td>9572181034</td>
-                                <td>Bihar, India</td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-sm">
-                    On hold
-                  </button>
+                                        {{patient.confirm}}
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>

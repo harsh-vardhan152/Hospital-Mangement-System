@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Patient } from 'src/app/Models/patient.model';
+import { PatientsService } from 'src/app/Services/patients.service';
 
 @Component({
   selector: 'app-patient',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientComponent implements OnInit {
 
-  constructor() { }
+  patients: Patient[] = [];
+  constructor(private patientslistservice: PatientsService,
+    private router:Router) { }
 
   ngOnInit(): void {
+    this.getPatients();
+  }
+  private getPatients()
+  {
+    this.patientslistservice.registerPatientsFromRemote().subscribe(data =>
+      {
+        this.patients=data;
+      });
+  }
+  updatePatients(p_id:number)
+  {
+    this.router.navigate(['updatepatients',p_id]);
+  }
+  deletePatients(p_id: number)
+  {
+    this.patientslistservice.deletePatients(p_id).subscribe(data =>{
+      console.log(data);
+      this.getPatients();
+    })
   }
 
 }

@@ -1,5 +1,6 @@
 <html>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 <app-doctornavbar></app-doctornavbar>
 
 <body>
@@ -9,56 +10,29 @@
                 <div class="row mb-4">
                     <div class="col-12">
                         <h4 class="text-dark font-bold text-center mb-3">
-                            PATIENTS DISCHARGED
+                            DISCHARGED PATIENTS
                         </h4>
                         <table class="table table-striped table-bordered text-center position:text-center">
                             <thead class="bg-info">
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Mobile</th>
-                                    <th>Address</th>
-                                    <th>Delete</th>
+                                    <th>Patient Name</th>
+                                    <th>Discharge Date</th>
+                                    <th>Time</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>John</td>
-                                    <td>9672181024</td>
-                                    <td>abcd</td>
+                                <tr *ngFor="let dp of disP">
+                                    <td>{{dp.p_name}}</td>
+                                    <td>{{dp.d_date}}</td>
+                                    <td>{{dp.d_time}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary btn-sm">
-                        Delete
-                      </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>John</td>
-                                    <td>9672181024</td>
-                                    <td>abcd</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-sm">
-                        Delete
-                      </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>John</td>
-                                    <td>9672181024</td>
-                                    <td>abcd</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-sm">
-                        Delete
-                      </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>John</td>
-                                    <td>9672181024</td>
-                                    <td>abcd</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-sm">
-                        Delete
-                      </button>
+                                        <button type="button" class="btn btn-info btn-sm">
+                                            Update
+                                        </button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm">
+                                            Delete
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>

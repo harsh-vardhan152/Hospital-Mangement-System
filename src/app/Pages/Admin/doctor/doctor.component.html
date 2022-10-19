@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 <app-navigation></app-navigation>
 <section style="margin-left: 250px">
     <div class="container-fluid">
@@ -6,52 +7,50 @@
             <div class="row pt-md-5 mt-md-3 mb-5">
                 <div class="col-12 me-5">
                     <h4 class="text-dark font-bold text-center mb-3">DOCTOR'S LIST</h4>
+                    <button class="btn btn-success"(click)="addDoctor()">Register New Doctor</button><br><br>
                     <table class="table table-striped table-bordered text-center">
                         <thead class="bg-info">
                             <tr>
-                                <th>Name</th>
-                                <th>Profile Picture</th>
-                                <th>Mobile</th>
+                                <th>Id</th>
+                                <th>DoctorName</th>
+                                <th>Gender</th>
+                                <th>UserName</th>
+                                <th>Password</th>
+                                <th>Contact_Number</th>
                                 <th>Address</th>
-                                <th>Department</th>
-                                <th>Update</th>
-                                <th>Delete</th>
+                                <th>Specialization</th>
+                                <th>Experiance</th>
+                                <th>Salary</th>
+                                <th>Accept/Reject</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Subham kumar</td>
-                                <td img="pro.png"></td>
-                                <td>9572181024</td>
-                                <td>Bihar, India</td>
-                                <td>Cardiology</td>
+                            <tr *ngFor="let doctor of doctors">
+
+                                <td>{{doctor.d_id}}</td>
+                                <td>{{doctor.d_name}}</td>
+                                <td>{{doctor.gender}}</td>
+                                <td>{{doctor.username}}</td>
+                                <td>##########</td>
+
+                                <td>{{doctor.contact_no}}</td>
+                                <td>{{doctor.address}}</td>
+                                <td>{{doctor.specialization}}</td>
+                                <td>{{doctor.experiance}}</td>
+                                <td>{{doctor.salary}}</td>
+                                <td>{{doctor.accept}}</td>
+
+
                                 <td>
-                                    <button type="button" class="btn btn-primary btn-sm">
-                    Update
-                  </button>
+                                    <button routerLink="/update-doctor/{d_id}" (click)="updateDoctor(doctor.d_id)"
+                                        class="btn btn-sm btn-info">Verify Doctor</button>
+                                    
+                                    <button (click)="deleteDoctor(doctor.d_id)" class="btn btn-sm btn-danger"
+                                        style="margin-left:10px">Discard</button>
+                                    <!-- <button (click) ="doctorDetails(doctor.d_id)" class="btn btn-info">view</button> -->
                                 </td>
-                                <td>
-                                    <button type="button" class="btn btn-primary btn-sm">
-                    Delete
-                  </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ram Kumar</td>
-                                <td img="pro.png"></td>
-                                <td>9572181034</td>
-                                <td>Bihar, India</td>
-                                <td>Neurology</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary btn-sm">
-                    Update
-                  </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-primary btn-sm">
-                    Delete
-                  </button>
-                                </td>
+                                <!-- <td>{{doctor.accept}}</td> -->
                             </tr>
                         </tbody>
                     </table>

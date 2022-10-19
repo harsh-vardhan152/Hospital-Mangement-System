@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DoctorServicesService } from 'src/app/Services/doctor-services.service';
+import { DoctorList } from 'src/app/Models/doctor-list.model';
 
 @Component({
   selector: 'app-doctor-dashboard',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorDashboardComponent implements OnInit {
 
-  constructor() { }
+  [x: string]: any;
+  d_name!: string;
+  doctorlist: DoctorList=new DoctorList();
+
+  constructor(private doctorlistservice: DoctorServicesService, 
+    private route: ActivatedRoute,
+    private router:Router) { }
 
   ngOnInit(): void {
+    this.d_name=this.route.snapshot.params['d_name'];
+    this.doctorlistservice.getDocByName(this.d_name).subscribe(data => {
+      this.doctorlist=data;
+    }, error =>console.log(error)
+    );
   }
 
 }

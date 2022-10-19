@@ -1,197 +1,127 @@
 <app-navbar></app-navbar>
 <section class="" style="background-color: #eee">
-    <div class="container h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-lg-12 col-xl-11">
-                <div class="card text-black" style="border-radius: 25px">
-                    <div class="card-body p-md-5">
-                        <div class="row justify-content-center">
-                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                                    Sign up as Doctor
-                                </p>
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                  Sign up as Doctor
+                </p>
 
-                                <form class="mx-1 mx-md-4">
-                                    <div class="d-flex flex-row align-items-center mb-4">
-                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                                        <div class="form-outline flex-fill mb-0">
-                                            <input type="text" id="form3Example1c" class="form-control" />
-                                            <label class="form-label" for="form3Example1c">Your Name</label
-                      >
+                <form class="mx-1 mx-md-4" #Registerform="ngForm" class="form-group" (ngSubmit)="registerDoctor()">
+                  <div class="d-flex flex-row align-items-center mb-4 form-group">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="d_name" name="d_name" class="form-control"
+                        [(ngModel)]="doctorsignup.d_name" #d_name="ngModel" required
+                        [class.is-invalid]="d_name.invalid && d_name.touched" />
+                      <label class="form-label" for="d_name">Your Name</label>
                     </div>
                   </div>
 
-                  <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="d-flex flex-row align-items-center mb-4 form-group">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input
-                        type="email"
-                        id="form3Example3c"
-                        class="form-control"
-                      />
-                      <label class="form-label" for="form3Example3c"
-                        >Your Email</label
-                      >
+                      <input type="email" id="address" name="address" class="form-control"
+                        [(ngModel)]="doctorsignup.address" #address="ngModel" required
+                        [class.is-invalid]="address.invalid && address.touched" />
+                      <label class="form-label" for="address">Your Email</label>
                     </div>
                   </div>
-                  <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="d-flex flex-row align-items-center mb-4 form-group">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input
-                        type="number"
-                        id="form3Example1c"
-                        class="form-control"
-                      />
-                      <label class="form-label" for="form3Example1c"
-                        >Contact No</label
-                      >
+                      <input type="tel" id="contact_no" class="form-control" pattern="[6-9]{1}[0-9]{9}"
+                        name="contact_no" [(ngModel)]="doctorsignup.contact_no" #contact_no="ngModel" required
+                        [class.is-invalid]="contact_no.invalid && contact_no.touched" />
+                      <label class="form-label" for="contact_no">Contact No</label>
                     </div>
                   </div>
-                  <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="d-flex flex-row align-items-center mb-4 form-group">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input
-                        type="text"
-                        id="form3Example1c"
-                        class="form-control"
-                      />
-                      <label class="form-label" for="form3Example1c"
-                        >Address</label
-                      >
-                    </div>
-                  </div>
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <select
-                        formControlName="qualification"
-                        class="form-select"
-                        aria-label="Default select example"
-                        required
-                      >
+                      <select id="gender" class="form-select" [(ngModel)]="doctorsignup.gender" name="gender" required>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Others">Others</option>
                       </select>
-                      <label class="form-label" for="form3Example1c"
-                        >Gender</label
-                      >
+                      <label class="form-label" for="gender">Gender</label>
                     </div>
                   </div>
 
-                  <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="d-flex flex-row align-items-center mb-4 form-group">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <select
-                        formControlName="qualification"
-                        class="form-select"
-                        aria-label="Default select example"
-                        required
-                      >
-                        <option value="Male">Cardiologist</option>
-                        <option value="Female">Neurologist</option>
-                        <option value="Others">Others</option>
-                      </select>
-                      <label class="form-label" for="form3Example1c"
-                        >specialization</label
-                      >
+                      <input type="text" class="form-control" placeholder="Enter specialization " name="specialization"
+                        [(ngModel)]="doctorsignup.specialization" #specialization="ngModel" required
+                        [class.is-invalid]="specialization.invalid && specialization.touched">
+                      <label class="form-label" for="form3Example1c">specialization</label>
+                      <small class="text-danger" [class.d-none]="username.valid || username.untouched">Specialization is
+                        required field</small>
                     </div>
                   </div>
-                  <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="d-flex flex-row align-items-center mb-4 form-group">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input
-                        type="text"
-                        id="form3Example1c"
-                        class="form-control"
-                      />
-                      <label class="form-label" for="form3Example1c">
+                      <input type="text" id="experiance" class="form-control" name="experiance"
+                        [(ngModel)]="doctorsignup.experiance" #specialization="ngModel" required />
+                      <label class="form-label" for="experiance">
                         Experinece
                       </label>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center mb-4">
-                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                                        <div class="form-outline flex-fill mb-0">
-                                            <input type="number" id="form3Example1c" class="form-control" />
-                                            <label class="form-label" for="form3Example1c">Salary
-                      </label>
-                                        </div>
-                                    </div>
+                      <small class="text-danger" [class.d-none]="username.valid || username.untouched">Experiance is
+                        required field</small>
+                    </div>
+                  </div>
+                  
 
-                                    <div class="d-flex flex-row align-items-center mb-4">
-                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                                        <div class="form-outline flex-fill mb-0">
-                                            <input type="text" id="form3Example1c" class="form-control" />
-                                            <label class="form-label" for="form3Example1c">
-                        Username</label
-                      >
+                  <div class="d-flex flex-row align-items-center mb-4 form-group">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="username" class="form-control" name="username"
+                        [(ngModel)]="doctorsignup.username" #username="ngModel" required
+                        [class.is-invalid]="username.invalid && username.touched" />
+                      <label class="form-label" for="username">
+                        Username</label>
+                      <small class="text-danger" [class.d-none]="username.valid || username.untouched">User Name is
+                        required field</small>
                     </div>
                   </div>
 
-                  <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="d-flex flex-row align-items-center mb-4 form-group">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input
-                        type="password"
-                        id="form3Example4c"
-                        class="form-control"
-                      />
-                      <label class="form-label" for="form3Example4c"
-                        >Password</label
-                      >
+                      <input type="password" id="password" class="form-control" name="password"
+                        [(ngModel)]="doctorsignup.password" #password="ngModel" required
+                        [class.is-invalid]="password.invalid && password.touched" />
+                      <label class="form-label" for="password">Password</label>
+                      <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is
+                        required field, Password length should be min 8 or max 16 and special characters like
+                        @#$%^</small>
                     </div>
                   </div>
 
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input
-                        type="password"
-                        id="form3Example4cd"
-                        class="form-control"
-                      />
-                      <label class="form-label" for="form3Example4cd"
-                        >Repeat your password</label
-                      >
-                    </div>
-                  </div>
 
                   <div class="form-check d-flex justify-content-center mb-5">
-                    <input
-                      class="form-check-input me-2"
-                      type="checkbox"
-                      value=""
-                      id="form2Example3c"
-                    />
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
                     <label class="form-check-label" for="form2Example3">
                       I agree all statements in
                       <a href="#!">Terms of service</a>
                     </label>
-                                        </div>
+                  </div>
 
-                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button type="button" class="btn btn-primary btn-lg">
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="button" [disabled]="Registerform.form.invalid" type="submit"
+                      class="btn btn-primary btn-lg">
                       Register
                     </button>
-                                        </div>
-                                </form>
-                                <div>
-                                    <p class="pb-lg-2" style="color: #393f81; margin-left: 100px">
-                                        Do have an account?
-                                        <a href="#!" style="color: #393f81" routerLink="/dlogin">Login</a
-                    >
-                  </p>
-                </div>
+                  </div>
+                </form>
               </div>
-              <div
-                class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
-              >
-                <img
-                  src="../../../../../assets/doctor.jpg"
-                  class="img-fluid"
-                  alt="Sample image"
-                />
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                <img src="../../../../../assets/doctor.jpg" class="img-fluid" alt="Sample image" />
               </div>
             </div>
           </div>

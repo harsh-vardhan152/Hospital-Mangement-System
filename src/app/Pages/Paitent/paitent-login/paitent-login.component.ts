@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute,Router } from '@angular/router';
+import { AuthenticationStatus } from 'src/app/Models/authentication-status.model';
+import { Patient } from 'src/app/Models/patient.model';
+import { PatientloginService } from 'src/app/Services/patientlogin.service';
 
 @Component({
   selector: 'app-paitent-login',
@@ -7,9 +12,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaitentLoginComponent implements OnInit {
 
-  constructor() { }
+  authStatus: AuthenticationStatus | undefined;
+  constructor(
+    private patientloginService: PatientloginService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit(): void {
+
+  ngOnInit(): void { }
+  patientlogin:Patient=new Patient()
+  onSubmit(form: NgForm) {
+    console.log(form.value.username, form.value.password);
+    sessionStorage.setItem("username",form.value.username);
+    sessionStorage.setItem("password",form.value.password);
+    
+
+    this.patientloginService
+    .authenticated(form.value.username, form.value.password)
+    .subscribe((res) => {
+      this.authStatus = res;
+      if (this.authStatus.authenticated) {
+        alert("Successfully logged in!")
+        this.router.navigate(['/patientdashboard'], {relativeTo: this.route});
+      }
+      else {
+        alert("Invalid Credentials!")
+        this.router.navigate(['/plogin'], { relativeTo: this.route});
+        form.reset();
+      }
+    });
+  
+   
   }
 
 }

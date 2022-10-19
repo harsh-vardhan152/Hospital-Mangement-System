@@ -40,6 +40,12 @@ import { PatientdoctorassignedComponent } from './Pages/Paitent/patientdoctorass
 import { PatientinvoiceComponent } from './Pages/Paitent/patientinvoice/patientinvoice.component';
 import { AdmininvoiceComponent } from './Pages/Admin/admininvoice/admininvoice.component';
 import { DoctorAppointentComponent } from './Pages/Doctor/doctor-appointent/doctor-appointent.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {UpdatePage } from './Pages/Admin/update-page/update-page.component';
+import { UpdateAppointmentComponent } from './Pages/Admin/update-appointment/update-appointment/update-appointment.component';
+import { FeedbackComponent } from './Pages/Paitent/patient-Feedback/feedback/feedback.component';
+import { UpdateAppointmentComponentD } from './Pages/Doctor/update-appointment/update-appointment/update-appointment.component';
 
 @NgModule({
   declarations: [
@@ -76,8 +82,14 @@ import { DoctorAppointentComponent } from './Pages/Doctor/doctor-appointent/doct
     PatientinvoiceComponent,
     AdmininvoiceComponent,
     DoctorAppointentComponent,
+    UpdatePage,
+    UpdateAppointmentComponent,
+    FeedbackComponent,
+    UpdateAppointmentComponentD
   ],
   imports: [
+    HttpClientModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
