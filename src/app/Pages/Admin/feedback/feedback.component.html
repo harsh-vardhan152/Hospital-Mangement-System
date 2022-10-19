@@ -1,0 +1,39 @@
+<app-navigation></app-navigation>
+<!--Section -->
+<br><br><br>
+<section style="margin-left: 250px">
+    <div class="container-fluid">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+            <div class="row pt-md-5 mt-md-3 mb-5">
+                <div class="col-12 me-5">
+                    <h4 class="text-dark font-bold text-center mb-3">PATIENT'S FEEDBACKS</h4>
+                    <table class="table table-striped table-bordered text-center">
+                        <thead class="bg-info">
+                            <tr>
+                                <th>Feedback Id</th>
+                                <th>Patient Name</th>
+                                <th>Appointed Doctor</th>
+                                <th>Comment</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let f of feedback" >
+                                <td>{{f.feedback_id}}</td>
+                                <td>{{f.p_name}}</td>
+                                <td>{{f.d_name}}</td>
+                                <td>{{f.p_comments}}</td>
+                                <td>
+                                    <button (click)="deleteFeedback(f.feedback_id)"
+                                        class="btn btn-sm btn-outline-danger">Discard Feedback</button>
+                                    <!-- <button (click) ="doctorDetails(doctor.d_id)" class="btn btn-info">view</button> -->
+                                </td>
+                                <!-- <td>{{doctor.accept}}</td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

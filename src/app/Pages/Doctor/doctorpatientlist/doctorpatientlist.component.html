@@ -15,35 +15,17 @@
                             <thead class="bg-info">
                                 <tr>
                                     <th>Name</th>
-                                    <th>Symtoms</th>
+                                    <th>Gender</th>
                                     <th>Mobile</th>
                                     <th>Address</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>John</td>
-                                    <td>AllergistsImmunologists</td>
-                                    <td>9672181024</td>
-                                    <td>abcd</td>
-                                </tr>
-                                <tr>
-                                    <td>John</td>
-                                    <td>AllergistsImmunologists</td>
-                                    <td>9672181024</td>
-                                    <td>abcd</td>
-                                </tr>
-                                <tr>
-                                    <td>John</td>
-                                    <td>AllergistsImmunologists</td>
-                                    <td>9672181024</td>
-                                    <td>abcd</td>
-                                </tr>
-                                <tr>
-                                    <td>John</td>
-                                    <td>AllergistsImmunologists</td>
-                                    <td>9672181024</td>
-                                    <td>abcd</td>
+                                <tr *ngFor="let p of pList" >
+                                    <td>{{p.p_name}}</td>
+                                    <td>{{p.p_gender}}</td>
+                                    <td>{{p.p_contact_no}}</td>
+                                    <td>{{p.username}}</td>
                                 </tr>
                             </tbody>
                         </table>

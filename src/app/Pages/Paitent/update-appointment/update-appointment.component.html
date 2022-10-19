@@ -1,0 +1,78 @@
+<section style="background-color: #eee;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add Appointment</p>
+  
+                  <form class="mx-1 mx-md-4" #Registerform="ngForm" (ngSubmit)="onSubmit()">
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="name" name="p_name" class="form-control" placeholder="Enter Full Name" [(ngModel)]="appointmentlist.p_name" #d_name="ngModel"
+                        />
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                     
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="address" name="address" class="form-control" placeholder="Enter Address" [(ngModel)]="appointmentlist.address" #address="ngModel"
+                        />
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                     
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="gender" name="gender" class="form-control" placeholder="Enter Gender" [(ngModel)]="appointmentlist.gender" #gender="ngModel"
+                        />
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="username" name="disease" class="form-control" placeholder="Symptoms" [(ngModel)]="appointmentlist.disease" #username="ngModel"
+                        />
+                      </div>
+                    </div>
+                                     
+                    
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      
+                      <input type="submit" value="Update" class=" btn btn-success actionBtn"> &NonBreakingSpace;
+                        <button (click)="addAppointment()" class="btn btn-primary btn-lg">Add</button>
+                    </div>
+
+                    <!-- <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        &NonBreakingSpace;
+                        <button type="button" 
+                       
+                         class="btn btn-secondary btn-lg" (click)="registerUser()">Register</button>
+                      </div> -->
+  
+                  </form>
+  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="../../../../assets/appointment.jpg"
+                    class="img-fluid" alt="Sample image">
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+

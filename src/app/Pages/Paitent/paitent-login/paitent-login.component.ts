@@ -34,7 +34,7 @@ export class PaitentLoginComponent implements OnInit {
       this.authStatus = res;
       if (this.authStatus.authenticated) {
         alert("Successfully logged in!")
-        this.router.navigate(['/patientdashboard'], {relativeTo: this.route});
+        this.router.navigate(['/patientdashboard',this.authStatus.username], {relativeTo: this.route});
       }
       else {
         alert("Invalid Credentials!")

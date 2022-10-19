@@ -9,20 +9,25 @@ import { HttpClient } from '@angular/common/http';
 export class PatientsService {
 
   private baseURL = "http://localhost:8181/api/v1/patients"
+  private URL = "http://localhost:8181/api/v1/patient"
   constructor(private _http:HttpClient) { }
 
   public registerPatientsFromRemote():Observable<PatientList[]> {
       return this._http.get<PatientList[]>(`${this.baseURL}`)
     }
-    getPatientsById(p_id:number):Observable<PatientList>
+    public getPatientsById(p_id:number):Observable<PatientList>
     {
       return this._http.get<PatientList>(`${this.baseURL}/${p_id}`)
     }
-    updatePatients(p_id:number,patientslist:PatientList): Observable<Object>{
+    public updatePatients(p_id:number,patientslist:PatientList): Observable<Object>{
       return this._http.put(`${this.baseURL}/${p_id}`,patientslist)
     }
-    deletePatients(p_id:number): Observable<Object>
+    public deletePatients(p_id:number): Observable<Object>
     {
       return this._http.delete(`${this.baseURL}/${p_id}`);
+    }
+    public getPatientsByUsername(username:string):Observable<PatientList>
+    {
+      return this._http.get<PatientList>(`${this.URL}/${username}`)
     }
 }

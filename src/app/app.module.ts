@@ -46,6 +46,8 @@ import {UpdatePage } from './Pages/Admin/update-page/update-page.component';
 import { UpdateAppointmentComponent } from './Pages/Admin/update-appointment/update-appointment/update-appointment.component';
 import { FeedbackComponent } from './Pages/Paitent/patient-Feedback/feedback/feedback.component';
 import { UpdateAppointmentComponentD } from './Pages/Doctor/update-appointment/update-appointment/update-appointment.component';
+import { UpdateAppointmentComponentP } from './Pages/Paitent/update-appointment/update-appointment.component';
+import { FeedbackComponentAdmin } from './Pages/Admin/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +87,10 @@ import { UpdateAppointmentComponentD } from './Pages/Doctor/update-appointment/u
     UpdatePage,
     UpdateAppointmentComponent,
     FeedbackComponent,
-    UpdateAppointmentComponentD
+    UpdateAppointmentComponentD,
+    UpdateAppointmentComponentP,
+    FeedbackComponentAdmin
+
   ],
   imports: [
     HttpClientModule,

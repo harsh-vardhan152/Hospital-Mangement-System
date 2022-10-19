@@ -19,7 +19,7 @@ export class DoctorDashboardComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit(): void {
-    this.d_name=this.route.snapshot.params['d_name'];
+    this.d_name=this.route.snapshot.params['username'];
     this.doctorlistservice.getDocByName(this.d_name).subscribe(data => {
       this.doctorlist=data;
     }, error =>console.log(error)

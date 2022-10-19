@@ -23,4 +23,12 @@ export class DoctorpatientdischargeComponent implements OnInit {
         this.disP=data;
       })    
   }
+
+  public deleteP(d_id:number){
+    this.disPServe.deleteDischargedPatient(d_id).subscribe(data =>{
+      console.log(data);
+      this.getDiscPatients();
+    })
+  }
+
 }

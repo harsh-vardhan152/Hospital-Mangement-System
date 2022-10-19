@@ -29,6 +29,8 @@ import {UpdatePage } from './Pages/Admin/update-page/update-page.component';
 import { UpdateAppointmentComponent } from './Pages/Admin/update-appointment/update-appointment/update-appointment.component';
 import { FeedbackComponent } from './Pages/Paitent/patient-Feedback/feedback/feedback.component';
 import { UpdateAppointmentComponentD } from './Pages/Doctor/update-appointment/update-appointment/update-appointment.component';
+import { UpdateAppointmentComponentP } from './Pages/Paitent/update-appointment/update-appointment.component';
+import { FeedbackComponentAdmin } from './Pages/Admin/feedback/feedback.component';
 
 const routes: Routes = [
   {
@@ -106,12 +108,13 @@ const routes: Routes = [
     component: AdmininvoiceComponent,
   },
   { path: 'doctordashboard', component: DoctorDashboardComponent },
-  { path: 'doctordashboard/:d_name', component: DoctorDashboardComponent },
+  { path: 'doctordashboard/:username', component: DoctorDashboardComponent },
   {path:'update/:d_id',component:UpdatePage},
   {path:'update',component:UpdatePage},
   {path:'update-ap/:ap_id',component:UpdateAppointmentComponent},
   {path:'update-ap',component:UpdateAppointmentComponent},
   { path: 'patientdischarge', component: DoctorpatientdischargeComponent },
+  { path: 'patientdischarge/:username', component: DoctorpatientdischargeComponent },
   { path: 'patientlist', component: DoctorpatientlistComponent },
   { path: 'Doctorappointemnt', component: DoctorAppointentComponent },
   { path: 'patientdashboard', component: PatientdashboardComponent },
@@ -120,6 +123,10 @@ const routes: Routes = [
   { path: 'feedback', component: FeedbackComponent},
   {path:'update-apD/:ap_id',component:UpdateAppointmentComponentD},
   {path:'update-apD',component:UpdateAppointmentComponentD},
+  {path:'update-apP/:ap_id',component:UpdateAppointmentComponentP},
+  {path:'update-apP',component:UpdateAppointmentComponentP},
+  { path: 'patientdashboard/:username', component: PatientdashboardComponent },
+  { path: 'feedbackAdmin', component: FeedbackComponentAdmin}
 ];
 
 @NgModule({

@@ -7,27 +7,33 @@ import { FeedbackService } from 'src/app/Services/feedback.service';
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.css']
 })
-export class FeedbackComponent implements OnInit {
+export class FeedbackComponentAdmin implements OnInit {
 
-  feedback = new Feedback();
-  msg = "";
+  feedback!: Feedback[];
+  msg: any;
   constructor(private fServe:FeedbackService, private _router: Router) { }
 
   ngOnInit(): void {
+    this.getFeedback();
   }
-  registerFeedback(){
-    this.fServe.registerFeedbackFromRemote(this.feedback).subscribe(
+  getFeedback(){
+    this.fServe.registerDisplayFeedbackFromRemote().subscribe(
       data => {
-        console.log("Response received");
-        alert("Feedback Submitted");
-        this._router.navigate(['/feedback'])
-
+        this.feedback=data;
       },
       error => {
         console.log("Exception occured");
         this.msg=error.error;
       }
     )
+  }
+  deleteFeedback(f_id:Number){
+    this.fServe.deleteFeedback(f_id).subscribe(
+      data=>{
+
+      }
+    )
+    this.getFeedback();
   }
 
 }

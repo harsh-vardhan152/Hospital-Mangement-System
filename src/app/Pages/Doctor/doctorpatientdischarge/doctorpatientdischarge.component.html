@@ -27,10 +27,7 @@
                                     <td>{{dp.d_date}}</td>
                                     <td>{{dp.d_time}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-info btn-sm">
-                                            Update
-                                        </button>
-                                        <button type="button" class="btn btn-outline-danger btn-sm">
+                                        <button (click) ="deleteP(dp.d_id)" type="button" class="btn btn-outline-danger btn-sm">
                                             Delete
                                         </button>
                                     </td>

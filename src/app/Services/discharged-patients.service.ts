@@ -21,4 +21,9 @@ export class DischargedPatientsService {
     public Count(){
       return this._http.get("http://localhost:8181/api/v1/dpCount")
     }
+
+    public deleteDischargedPatient(d_id:number): Observable<Object>
+    {
+      return this._http.delete(`${this.baseURL}/${d_id}`);
+    }
 }
