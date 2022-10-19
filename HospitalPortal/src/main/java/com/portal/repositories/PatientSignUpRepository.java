@@ -7,4 +7,6 @@ import com.portal.entities.PatientSignUp;
 @Repository
 public interface PatientSignUpRepository extends JpaRepository<PatientSignUp,Integer> {
 
+	PatientSignUp findByUsername(String username);
+
 }

@@ -3,6 +3,7 @@ package com.portal.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,11 +11,10 @@ import javax.persistence.Table;
 	@Table(name="dischargedpatient")
 	public class DischargedPatient {
 		@Id
-		@GeneratedValue
-		 @Column(name="d_id")
-			private int d_id;
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private int d_id;
 		@Column(name="P_name")
-		private  String p_name;
+		private  String pName;
 		@Column(name="D_name")
 		private String d_name;
 		@Column(name="D_time")
@@ -28,10 +28,10 @@ import javax.persistence.Table;
 		private String confirm;
 		
 		public String getP_name() {
-			return p_name;
+			return pName;
 		}
 		public void setP_name(String p_name) {
-			this.p_name = p_name;
+			this.pName = p_name;
 		}
 		public String getD_name() {
 			return d_name;
@@ -63,10 +63,25 @@ import javax.persistence.Table;
 		public void setConfirm(String confirm) {
 			this.confirm = confirm;
 		}
-		public DischargedPatient(String p_name, String d_name, String d_time, String d_date, String disease,
+		
+		
+		public int getD_id() {
+			return d_id;
+		}
+		public void setD_id(int d_id) {
+			this.d_id = d_id;
+		}
+		public String getpName() {
+			return pName;
+		}
+		public void setpName(String pName) {
+			this.pName = pName;
+		}
+		public DischargedPatient(int d_id, String pName, String d_name, String d_time, String d_date, String disease,
 				String confirm) {
 			super();
-			this.p_name = p_name;
+			this.d_id = d_id;
+			this.pName = pName;
 			this.d_name = d_name;
 			this.d_time = d_time;
 			this.d_date = d_date;
@@ -77,6 +92,12 @@ import javax.persistence.Table;
 		{
 			
 		}
+		@Override
+		public String toString() {
+			return "DischargedPatient [d_id=" + d_id + ", pName=" + pName + ", d_name=" + d_name + ", d_time=" + d_time
+					+ ", d_date=" + d_date + ", disease=" + disease + ", confirm=" + confirm + "]";
+		}
+		
 	}
 
 

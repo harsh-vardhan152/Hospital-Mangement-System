@@ -80,5 +80,12 @@ public class PatientSignUpController {
 		 response.put("deleted", Boolean.TRUE);
 		 return ResponseEntity.ok(response);
 	}
+	
+	@GetMapping("/patient/{username}")
+	public PatientSignUp getPatientByUsername(@PathVariable String username) {
+		PatientSignUp p= patientsignuprepository.findByUsername(username);
+		return p;
+		
+	}
 
 }
