@@ -23,7 +23,7 @@ public class Appointment {
 	@Column(name="P_name ")
 	private String p_name;
 	@Column(name="D_name ")
-	private String d_name;
+	private String doctorName;
 
 	@Column(name="ADDRESS  ")
 	private String address;
@@ -56,11 +56,11 @@ public class Appointment {
 	}
 
 	public String getD_name() {
-		return d_name;
+		return doctorName;
 	}
 
 	public void setD_name(String d_name) {
-		this.d_name = d_name;
+		this.doctorName = d_name;
 	}
 
 	public String getAddress() {
@@ -108,7 +108,7 @@ public class Appointment {
 		super();
 		this.ap_id = ap_id;
 		this.p_name = p_name;
-		this.d_name = d_name;
+		this.doctorName = d_name;
 		this.address = address;
 		this.gender = gender;
 		this.ap_date = ap_date;

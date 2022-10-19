@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.portal.entities.Appointment;
 import com.portal.entities.DischargedPatient;
 import com.portal.repositories.DischargedPatientRepository;
 
@@ -34,6 +35,18 @@ public class DischargedPatientController {
 		public DischargedPatient addDischargedPatient(@RequestBody DischargedPatient d) {
 			DischargedPatient discharged = dischargedpatientrepository.save(d);
 			return discharged;
+		}
+		
+		@GetMapping("/dpCount")
+		public int apCount() {
+			int count=0;
+			List<DischargedPatient> d=dischargedpatientrepository.findAll();
+			for(DischargedPatient data : d) {
+				if(data.getConfirm().matches("Discharged")) {
+					++count;
+				}
+			}
+			return count;
 		}
 
 }

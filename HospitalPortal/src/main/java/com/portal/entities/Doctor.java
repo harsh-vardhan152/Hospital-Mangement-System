@@ -17,7 +17,7 @@ public class Doctor {
 	@GeneratedValue
 	private int d_id;
 	@Column(name="d_name")
-	private String d_name;
+	private String doctorName;
 	@Column(name="gender")
 	private String gender;
 	@Column(name="username")
@@ -45,7 +45,7 @@ public class Doctor {
 			String address, String specialization, String experiance, String accept, String salary) {
 		super();
 		this.d_id = d_id;
-		this.d_name = d_name;
+		this.doctorName = d_name;
 		this.gender = gender;
 		this.username = username;
 		this.password = password;
@@ -66,11 +66,11 @@ public class Doctor {
 	}
 
 	public String getD_name() {
-		return d_name;
+		return doctorName;
 	}
 
 	public void setD_name(String d_name) {
-		this.d_name = d_name;
+		this.doctorName = d_name;
 	}
 
 	public String getGender() {

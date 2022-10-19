@@ -1,5 +1,6 @@
 package com.portal.controllers;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.portal.entities.Doctor;
@@ -82,5 +84,22 @@ public class DoctorSignUpController {
 		 response.put("deleted", Boolean.TRUE);
 		 return ResponseEntity.ok(response);
 	}
+	@GetMapping("/doctorscount")
+	public int doctorCount() {
+		int count=0;
+		List<Doctor> d=doctorsignuprepository.findAll();
+		for(Doctor data : d) {
+			if(data.getAccept()==null) {
+				++count;
+			}
+		}
+		return count;
+	}
 	
+	@GetMapping("/docByName/{d_name}")
+	public Doctor getDoctorByName(@PathVariable String d_name) {
+		Doctor d=doctorsignuprepository.findByUsername(d_name);
+		return d;
+		
+	}
 }

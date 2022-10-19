@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.portal.entities.Appointment;
+import com.portal.entities.Doctor;
 import com.portal.exception.ResourceNotFoundException;
 import com.portal.repositories.AppointmentRepository;
 
@@ -83,6 +84,26 @@ public class AppointmentController {
 		 Map<String, Boolean> response = new HashMap<>();
 		 response.put("deleted", Boolean.TRUE);
 		 return ResponseEntity.ok(response);
+	}
+	
+	@GetMapping("/appointmentsCount")
+	public int apCount() {
+		int count=0;
+		List<Appointment> d=appointmentrepository.findAll();
+		for(Appointment data : d) {
+			if(data.getD_name()==null) {
+				++count;
+			}
+		}
+		return count;
+	}
+	
+	@GetMapping("/docappointments/{d_name}")
+	public List<Appointment> getAppointmentByDoctor(@PathVariable String d_name) {
+		
+		List<Appointment> ap=appointmentrepository.findByDoctorName(d_name);
+		return ap;
+		
 	}
 	
 }

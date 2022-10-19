@@ -9,4 +9,7 @@ import com.portal.entities.Doctor;
 @Repository
 public interface DoctorSignUpRepository extends JpaRepository<Doctor,Integer>{
 
+
+	Doctor findByUsername(String d_name);
+
 }
