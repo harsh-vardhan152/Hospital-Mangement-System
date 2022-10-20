@@ -1,0 +1,25 @@
+<app-patientnavbar></app-patientnavbar>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+<body>
+    <div class="row pt-md-5 mt-md-3 mb-5">
+        <h2 style="
+          text-align: center;
+          padding-right: 0px;
+          padding-bottom: 20px;
+          padding-left: 150px;
+          margin-top: 20px;
+        ">
+            User Profile
+        </h2>
+        <div class="card" style="width: 18rem; text-align: center; font-weight: 100">
+            <p>{{patientList.p_name}}</p>
+            <p>{{patientList.p_gender}}</p>
+            <p>{{patientList.p_contact_no}}</p>
+            <p>{{patientList.username}}</p>
+        </div>
+    </div>
+</body>
+
+</html>

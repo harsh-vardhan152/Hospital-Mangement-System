@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+<app-navigation></app-navigation>
+<section style="margin-left: 250px">
+    <div class="container-fluid">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+            <div class="row pt-md-5 mt-md-3 mb-5">
+                <div class="col-12">
+                    <h4 class="text-dark font-italic text-center mb-3">Patients List</h4>
+                    <table class="table table-striped table-bordered text-center">
+                        <thead class="bg-info">
+                            <tr>
+                                <th>id</th>
+                                <th>name</th>
+                                <th>gender</th>
+                                <th>username</th>
+                                <th>password</th>
+                                <th>contact_no</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let patient of patients">
+                                <td>{{ patient.p_id }}</td>
+                                <td>{{ patient.p_name }}</td>
+                                <td>{{ patient.p_gender }}</td>
+                                <td>{{ patient.username }}</td>
+                                <td>##########</td>
+                                <td>{{ patient.p_contact_no }}</td>
+                                <!-- <td>{{d.specialization}}</td> -->
+                                <td>
+                                    <button (click)="deletePatients(patient.p_id)" class="btn btn-sm btn-danger" style="margin-left: 10px">
+                    Delete
+                  </button>
+                                    <button (click)="updatePatients(patient.p_id)" class="btn btn-sm btn-success" style="margin-left: 10px">
+                    update
+                  </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

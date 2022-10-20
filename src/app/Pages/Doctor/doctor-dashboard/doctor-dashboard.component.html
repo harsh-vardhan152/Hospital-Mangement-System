@@ -1,0 +1,31 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+<app-doctornavbar></app-doctornavbar>
+
+<body>
+    <h2 style="
+        text-align: center;
+        padding-top: 100px;
+        padding-right: 30px;
+        padding-bottom: 0px;
+        padding-left: 150px;
+      ">
+        Doctor Profile
+    </h2>
+
+    <div class="card">
+        <h2>{{doctorlist.d_name}} <span class="btn btn-sm btn-success">{{doctorlist.accept}}</span></h2>
+        <p>MBBS</p>
+        <p>Hospital name</p>
+        <p class="title">Contact</p>
+        <p>{{doctorlist.contact_no}}</p>
+        <p class="title">Speciality</p>
+        <p>{{doctorlist.specialization}}</p>
+        <p class="title">Experience</p>
+        <p>{{doctorlist.experiance}}</p>
+        <p class="title">Salary</p>
+        <p>{{doctorlist.salary}}</p>
+    </div>
+</body>
+
+</html>
